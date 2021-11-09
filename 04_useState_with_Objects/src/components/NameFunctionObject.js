@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function NameFunctionObject() {
-    const [name, setName] = useState({
+    const [name, setName] = useState( {
         firstName: '',
         lastName: '',
         country: ''
@@ -13,7 +13,7 @@ function NameFunctionObject() {
 
     // const handleFirstName = (event) => {  // OK !
     //     setName(() => {
-    //         return  {...name, firstName: event.target.value}
+    //         return {...name, firstName: event.target.value };
     //     })
     // };
 
@@ -27,9 +27,11 @@ function NameFunctionObject() {
     }
 
     function handleLastName(event) {
-        setName(() => {
+        return setName(() => {
             return {...name, lastName: event.target.value}})  
     }
+
+     console.log(name)
      
     return (
             <form /* onSubmit={""} */>
@@ -37,7 +39,7 @@ function NameFunctionObject() {
                     Firstname : &nbsp;
                     <input 
                        type="text"  
-                       value={name.firstName}
+                       value={name.firstName}/* useful ? what if absent ? */
                        placeholder="Enter your firtName" 
                        onChange={handleFirstName} 
                     />
@@ -48,6 +50,7 @@ function NameFunctionObject() {
                     Lastname : &nbsp;
                     <input 
                        type="text"  
+                       value={name.lastName}/* useful ? what if absent ? */
                        placeholder="Enter your lastName" 
                        onChange={handleLastName} 
                     />
@@ -56,6 +59,8 @@ function NameFunctionObject() {
                 <h2>lastName is : {name.lastName}</h2>
             </form>
     );
+
+   
 }
 
 export default NameFunctionObject

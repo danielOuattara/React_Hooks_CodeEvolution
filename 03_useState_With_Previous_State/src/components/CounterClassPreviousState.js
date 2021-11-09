@@ -28,7 +28,7 @@ export default class CounterClassPreviousState extends Component {
     handleCounterDecrementBy3() {
         this.setState((previousState) => {
             return {
-                counter: previousState.counter -3
+                counter: previousState.counter - 3
             }
         })
     }

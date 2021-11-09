@@ -9,6 +9,12 @@ function HookUseStateArray() {
         { firstName: 'hasan', lastName:'powel', country:'ethopia', id: 3}
     ]);
 
+    const handleAddNumber = () => {
+        setNumber(() => {
+            return [...numbers, { value: Math.floor(Math.random() * 100 + 1), id:uuidv4(), id_simple: numbers.length}]
+        })
+    }
+
     const handleAddName = () => {
         setNumber(() => {
             return [...numbers, { value: Math.floor(Math.random() * 100 + 1), id:uuidv4(), id_simple: numbers.length}]
@@ -20,12 +26,10 @@ function HookUseStateArray() {
 
     return (
         <div>
-            <button onClick={handleAddName}>Add User</button>
-
+            <button onClick={handleAddNumber}>Add Number to numbers[]</button>
             <ul>
-                { numbers.map((item) => <li key={item.id}> {item.value} | {item.id} | {item.id_simple} |</li>)}
+                { numbers.map((item) => <li key={item.id}> {item.value} | {item.id} | {item.id_simple} </li>)}
             </ul>
-
             <ul>
                 { persons.map((item) => <li key={item.id}>  firstName :  {item.firstName} id :  {item.id} </li>)}
             </ul>

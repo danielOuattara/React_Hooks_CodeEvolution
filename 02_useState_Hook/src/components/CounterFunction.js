@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 function CounterFunction() {
+    
     const [counter, setCounter] = useState(0);
     const handleCounterIncrement = () => {
         setCounter(counter + 1)
@@ -13,4 +14,4 @@ function CounterFunction() {
     );
 }
 
-export default CounterFunction
+export default CounterFunction;

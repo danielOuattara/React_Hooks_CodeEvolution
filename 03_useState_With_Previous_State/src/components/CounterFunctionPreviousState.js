@@ -3,13 +3,10 @@ import React, { useState } from 'react';
 function CounterFunctionPreviousState() {
 
     const initialCounter = 0;
-
     const [counter, setCounter] = useState(initialCounter);
-
     const handleCounterIncrement = () => {
         setCounter(counter => counter + 1)
     }
-
     const handleCounterDecrement = () => {
         setCounter(counter => counter - 1)
     }
