@@ -4,10 +4,7 @@ import React, { Component } from 'react'
 export default class ClassMouse extends Component {
     constructor(props) {
         super(props)
-        this.state = {
-             x: 0,
-             y: 0
-        }
+        this.state = { x: 0, y: 0 }
     }
 
     logMousePosition = (event) => {
