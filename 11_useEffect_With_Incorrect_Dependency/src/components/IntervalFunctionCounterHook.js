@@ -21,7 +21,7 @@ const IntervalFunctionCounterHook = () => {
         setCounter(counter + 1)
     }
     console.log('==', counter)
-    
+
     useEffect(() => {
         const interval = setInterval(ticTac, 1000);
         return () => {
@@ -29,9 +29,7 @@ const IntervalFunctionCounterHook = () => {
         }
     }, [counter])
     
-
     return (<h1> Time : {counter}</h1>);
 }
 
 export default IntervalFunctionCounterHook;
-

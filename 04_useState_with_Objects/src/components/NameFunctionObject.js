@@ -59,8 +59,5 @@ function NameFunctionObject() {
                 <h2>lastName is : {name.lastName}</h2>
             </form>
     );
-
-   
 }
-
 export default NameFunctionObject

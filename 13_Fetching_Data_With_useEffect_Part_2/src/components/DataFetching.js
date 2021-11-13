@@ -10,27 +10,25 @@ function DataFetching() {
 
     const handleOnePostId = (event) => {
         setPostId(event.target.value)
-    }
+    };
+
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/posts', { params: {_limit: 10 }})
         .then(res =>{
-            console.log(res)
             setPosts(res.data)
         })
         .catch(err => {
             console.log(err.message)
         })
     }, [])
-    
 
     useEffect(() => {
         axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-        .then(res =>{
-            console.log(res)
-            setOnePost(res.data)
+        .then(response =>{
+            setOnePost(response.data)
         })
-        .catch(err => {
-            console.log(err.message)
+        .catch(error => {
+            console.log(error.message)
         })
     }, [postId])
     return (
@@ -39,13 +37,18 @@ function DataFetching() {
             {posts.map( (post) => (
                 <li key={post.id}>{post.title}</li>
                 ))}
-            <hr/>
-            <h2>Single post</h2>
 
-            <input type="text"  value={postId} placeholder="Enter a integer" onChange={handleOnePostId} />
+            <hr/>
+
+            <h2>Single post</h2>
+            <input
+              type="text"
+              value={postId}
+              placeholder="Enter a integer"
+              onChange={handleOnePostId}
+            />
             <p>{onePost.title}</p>
         </div>
     )
 }
-
-export default DataFetching
+export default DataFetching;

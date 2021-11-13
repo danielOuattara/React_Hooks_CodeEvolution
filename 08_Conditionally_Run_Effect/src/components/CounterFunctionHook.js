@@ -2,10 +2,9 @@
 import React, { useState, useEffect } from 'react'
 
 function CounterFunctionHook() {
-
     const [counter, setCounter]  = useState(0);
     const [name, setName]  = useState("");
-    
+
     const handleClickCounter = () => {
         return setCounter( counter => counter + 1)
     }
@@ -22,13 +21,12 @@ function CounterFunctionHook() {
     return (
         <div>
             <button onClick={handleClickCounter}>Clicked {counter} times</button>
-            <input 
-               type='text' 
-               value={name} 
+            <input
+               type='text'
+               value={name}
                onChange={handleNameChange}
-            />   
+            />
         </div>
     );
 }
-
 export default CounterFunctionHook;

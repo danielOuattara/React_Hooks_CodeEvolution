@@ -5,7 +5,7 @@ export default class CounterClass extends Component {
         super(props)
         this.state = {
             counter: 0,
-            name: "",     
+            name: "",
         }
         this.handleCounterIncrement = this.handleCounterIncrement.bind(this)
         this.handleNameChange = this.handleNameChange.bind(this)
@@ -14,13 +14,13 @@ export default class CounterClass extends Component {
     componentDidMount() {
         document.title = `Clicked ${this.state.counter} times`;
     }
+    
     componentDidUpdate( prevProps, prevState) {
         if(prevState.counter !== this.state.counter) {
             console.log("updating document : componentDidUpdate");
             document.title = `Clicked ${this.state.counter} times`;
         }
     }
-
 
     handleCounterIncrement() {
         this.setState({
@@ -33,14 +33,13 @@ export default class CounterClass extends Component {
             return {name: event.target.value }
         })
     }
-    
-    
+
     render() {
         return (
             <div>
                 <button onClick={this.handleCounterIncrement}> Increment: {this.state.counter}</button>
-                <input 
-                  type='text' 
+                <input
+                  type='text'
                   value= {this.state.name}
                   onChange={this.handleNameChange}
                 />

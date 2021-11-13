@@ -1,6 +1,5 @@
-
 import { useEffect, useState} from 'react';
-import axios from 'axios'
+import axios from 'axios';
 
 function DataFetching() {
     const [posts, setPosts] = useState([]); // for multiple posts request
@@ -11,13 +10,13 @@ function DataFetching() {
 
     const handleOnePostId = (event) => {
         setTypedId(event.target.value);
-    }
+    };
 
     const handleSumbit = (event) => {
         event.preventDefault();
         setPostId(typedId);
+    };
 
-    }
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/posts', { params: {_limit: 10 }})
         .then(res =>{
@@ -65,5 +64,4 @@ function DataFetching() {
         </div>
     )
 }
-
-export default DataFetching
+export default DataFetching;

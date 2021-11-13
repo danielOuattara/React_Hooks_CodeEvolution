@@ -13,16 +13,13 @@ function HookUseStateArray() {
         setNumber(() => {
             return [...numbers, { value: Math.floor(Math.random() * 100 + 1), id:uuidv4(), id_simple: numbers.length}]
         })
-    }
+    };
 
     const handleAddName = () => {
         setNumber(() => {
             return [...numbers, { value: Math.floor(Math.random() * 100 + 1), id:uuidv4(), id_simple: numbers.length}]
         })
-    }
-
-    console.log(numbers)
-
+    };
 
     return (
         <div>
@@ -33,12 +30,7 @@ function HookUseStateArray() {
             <ul>
                 { persons.map((item) => <li key={item.id}>  firstName :  {item.firstName} id :  {item.id} </li>)}
             </ul>
-
-
-
-
         </div>
     );
 }
-
-export default HookUseStateArray
+export default HookUseStateArray;

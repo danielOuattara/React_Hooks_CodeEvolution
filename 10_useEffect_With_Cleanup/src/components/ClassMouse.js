@@ -22,12 +22,12 @@ export default class ClassMouse extends Component {
     componentWillUnmount() {
         window.removeEventListener("mousemove", this.logMousePosition)
     }
-    
+
     render() {
         return (
             <div>
                 <h2> X - {this.state.x}  Y - {this.state.y}</h2>
             </div>
-        )
+        );
     }
 }

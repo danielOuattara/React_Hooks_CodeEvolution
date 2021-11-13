@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect} from 'react';
 
 function FunctionMouseHook() {
@@ -17,10 +15,8 @@ function FunctionMouseHook() {
 
     return (
         <div>
-            <h2> X - {mouse.x}  Y - {mouse.y}</h2>           
+            <h2> X - {mouse.x}  Y - {mouse.y}</h2>
         </div>
-    )
+    );
 }
-
-export default FunctionMouseHook
-
+export default FunctionMouseHook;

@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react'
+import { Component } from 'react';
 
 export default class IntervalClassCounter extends Component {
     constructor(props) {
@@ -16,7 +16,7 @@ export default class IntervalClassCounter extends Component {
     componentWillUnmount() {
         clearInterval(this.interval);
     }
-    
+
     ticTac = () => {
         this.setState({
             count: this.state.count + 1

@@ -1,18 +1,17 @@
 
 import { useEffect, useState} from 'react';
-import axios from 'axios'
+import axios from 'axios';
 
 function DataFetching() {
     const [ posts, setPosts] = useState([]);
 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/posts', { params: {_limit: 10 }})
-        .then(res =>{
-            console.log(res)
-            setPosts(res.data)
+        .then(response =>{
+            setPosts(response.data)
         })
-        .catch(err => {
-            console.log(err.message)
+        .catch(error => {
+            console.log(error.message)
         })
     }, [])
     return (
