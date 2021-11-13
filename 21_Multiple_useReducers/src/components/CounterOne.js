@@ -23,8 +23,9 @@ function CounterOne() {
             <h2>Count : { count }</h2>
             <button onClick={() => dispatch('INCREMENT')}>Increment</button>
             <button onClick={() => dispatch('DECREMENT')}>Decrement</button>
-            <button onClick={() => dispatch('RESET')}>Reset</button>
-            <p>counterTwo</p> 
+            <button onClick={() => dispatch('RESET')}>Reset</button> 
+            <br />
+            <p>from counterOne</p> 
         </>
     )
 }
