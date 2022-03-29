@@ -1,6 +1,4 @@
-
 import React, { Component } from 'react'
-
 export default class ClassMouse extends Component {
     constructor(props) {
         super(props)

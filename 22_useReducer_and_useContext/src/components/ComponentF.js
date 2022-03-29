@@ -1,17 +1,21 @@
-import { useContext} from 'react';
-import { CountContext } from './../App';
-
+import { useContext } from "react";
+import { CountContext } from "./../App";
 
 function ComponentF() {
-    const countContext = useContext(CountContext);
-    return (
-        <>
-          Component F : &nbsp;
-            <button onClick={() => countContext.dispatch('INCREMENT')}>Increment</button>
-            <button onClick={() => countContext.dispatch('DECREMENT')}>Decrement</button>
-            <button onClick={() => countContext.dispatch('RESET')}>Reset</button>
-        </>
-    );
+  const {count, dispatch } = useContext(CountContext);
+  return (
+    <>
+      Component F : &nbsp;
+      <button onClick={() => dispatch("INCREMENT")}>
+        Increment
+      </button>
+      <button onClick={() => dispatch("DECREMENT")}>
+        Decrement
+      </button>
+      <button onClick={() => dispatch("RESET")}>Reset</button>
+      <span>{count}</span>
+    </>
+  );
 }
 
 export default ComponentF;

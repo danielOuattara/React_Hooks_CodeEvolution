@@ -26,13 +26,19 @@
 
 
 
-import { useEffect, useState } from "react";
-// import axios from 'axios';
 
-function DataFetching() {
-  const [posts, setPosts] = useState([]);
+import React, { Component } from 'react'
 
-  useEffect(() => {
+export default class DataFetchingClass extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+       posts:[]
+    }
+  }
+
+  componentDidMount() {
     try {
       fetch("https://jsonplaceholder.typicode.com/posts?_limit=10", {
         method: "GET",
@@ -43,20 +49,24 @@ function DataFetching() {
               }
           return response.json();
         })
-        .then((data) => setPosts(() => data))
+        .then((data) => this.setState(() => ({ posts: data} )))
         .catch((error) => {
           console.log(error.message);
-        });
+        })
     } catch (error) {}
-  }, []);
+  }
 
-  return (
-    <div>
-      {posts.map((post) => (
-        <li key={post.id}>{post.title}</li>
-      ))}
-    </div>
-  );
+
+  render() {
+    return (
+      <div>
+        {this.state.posts.map((post) => (
+          <li key={post.id}>{post.title}</li>
+        ))}
+      </div>
+    );
+  }
 }
 
-export default DataFetching;
+
+

@@ -6,7 +6,7 @@ import FunctionMouseHook from './components/FunctionMouseHook';
 function App() {
   return (
     <div className="App">
-      {/* <ClassMouse /> */}
+      <ClassMouse />
       <hr />
       < FunctionMouseHook />
     </div>

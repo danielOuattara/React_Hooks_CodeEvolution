@@ -6,9 +6,7 @@ function App() {
   return (
     <div className="App">
       <IntervalClassCounter />
-      <br />
-      <hr />
-      <br />
+      <br /><hr /> <br />
       <IntervalFunctionCounterHook />
     </div>
   );

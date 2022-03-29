@@ -1,12 +1,8 @@
-import './App.css';
-import CounterOne from './components/CounterOne';
-
+import "./App.css";
+import CounterOne from "./components/CounterOne";
 
 function App() {
-  return <CounterOne />
+  return <CounterOne />;
 }
 
 export default App;
-
-
-

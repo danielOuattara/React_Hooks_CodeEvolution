@@ -1,13 +1,14 @@
-
-import './App.css';
-import DataFetching from './components/DataFetching';
-import DataFetchingUseReducer from './components/DataFetchingUseReducer';
+import "./App.css";
+import DataFetchingUseState from "./components/DataFetchingUseState";
+import DataFetchingUseReducer from "./components/DataFetchingUseReducer";
 
 function App() {
   return (
-    <> 
-      <DataFetching />
-      <br /><hr /><br />
+    <>
+      <DataFetchingUseState />
+      <br />
+      <hr />
+      <br />
       <DataFetchingUseReducer />
     </>
   );

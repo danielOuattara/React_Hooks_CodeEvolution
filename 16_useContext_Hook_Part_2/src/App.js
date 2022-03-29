@@ -1,7 +1,6 @@
-import { createContext } from 'react';
-import './App.css';
-import ComponentC from './components/Component_C';
-
+import { createContext } from "react";
+import "./App.css";
+import ComponentC from "./components/Component_C";
 
 export const UserContext = createContext();
 export const ChannelContext = createContext();
@@ -18,6 +17,3 @@ function App() {
   );
 }
 export default App;
-
-
-

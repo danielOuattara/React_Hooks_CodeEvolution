@@ -1,7 +1,6 @@
-import './App.css';
-import CounterOne from './components/CounterOne';
-import CounterTwo from './components/CounterTwo';
-
+import "./App.css";
+import CounterOne from "./components/CounterOne";
+import CounterTwo from "./components/CounterTwo";
 
 function App() {
   return (
@@ -15,6 +14,3 @@ function App() {
 }
 
 export default App;
-
-
-

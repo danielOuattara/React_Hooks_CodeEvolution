@@ -1,12 +1,7 @@
-
-import './App.css';
-import DataFetching from './components/DataFetching';
+import "./App.css";
+import DataFetching from "./components/DataFetching";
 
 function App() {
-  return (
-    <> 
-      <DataFetching />
-    </>
-  );
+  return <DataFetching />;
 }
 export default App;

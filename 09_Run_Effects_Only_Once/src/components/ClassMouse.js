@@ -20,6 +20,6 @@ export default class ClassMouse extends Component {
             <div>
                 <h2> X - {this.state.x}  Y - {this.state.y}</h2>
             </div>
-        )
+        );
     }
 }
