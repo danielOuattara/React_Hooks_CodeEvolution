@@ -24,18 +24,15 @@
 
 // export default DataFetching;
 
-
-
-
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class DataFetchingClass extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-       posts:[]
-    }
+      posts: [],
+    };
   }
 
   componentDidMount() {
@@ -44,18 +41,17 @@ export default class DataFetchingClass extends Component {
         method: "GET",
       })
         .then((response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${ response.status }`);
-              }
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
           return response.json();
         })
-        .then((data) => this.setState(() => ({ posts: data} )))
+        .then((data) => this.setState(() => ({ posts: data })))
         .catch((error) => {
           console.log(error.message);
-        })
+        });
     } catch (error) {}
   }
-
 
   render() {
     return (
@@ -67,6 +63,3 @@ export default class DataFetchingClass extends Component {
     );
   }
 }
-
-
-
