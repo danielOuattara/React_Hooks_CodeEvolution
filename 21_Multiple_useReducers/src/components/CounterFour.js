@@ -4,6 +4,7 @@ const initialState = {
   firstCounter: 0,
   secondCounter: 0,
 };
+
 const reducerOne = (state, action) => {
   switch (action.type) {
     case "INCREMENT_BY_1":

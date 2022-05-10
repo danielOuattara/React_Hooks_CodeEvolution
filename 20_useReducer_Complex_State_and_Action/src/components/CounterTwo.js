@@ -91,6 +91,7 @@ function CounterTwo() {
   return (
     <>
       <h2>firstCounter : {count.firstCounter}</h2>
+      <p>from counterTwo Component</p>
       <button onClick={() => dispatch({ type: "INCREMENT_BY_1", payload: 1 })}>
         Increment
       </button>
@@ -101,9 +102,9 @@ function CounterTwo() {
         Reset
       </button>
       <br />
-      <p>from counterTwo</p>
 
       <h2>secondCounter : {count.secondCounter}</h2>
+      <p>from counterTwo Component</p>
       <button onClick={() => dispatch({ type: "INCREMENT_BY_5", payload: 5 })}>
         Increment
       </button>
@@ -114,7 +115,6 @@ function CounterTwo() {
         Reset
       </button>
       <br />
-      <p>from counterTwo</p>
     </>
   );
 }

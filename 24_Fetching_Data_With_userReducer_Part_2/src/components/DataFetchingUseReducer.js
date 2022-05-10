@@ -86,26 +86,7 @@ function DataFetchingUseReducer() {
  
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  //   const requester = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         "https://jsonplaceholder.typicode.com/posts/1"
-  //       );
-  //       dispatch({ type: "FETCH_SUCCESS", payload: response.data });
-  //     } catch (error) {
-  //       dispatch({ type: "FETCH_FAIL", payload: error.message });
-  //     }
-  //   };
-
-  //   useEffect(() => {
-  //     requester();
-  //   }, [state]);
-
-  //------------------------
-
-  // auto invoked function
-  useEffect(() => {
-    (async () => {
+    const requester = async () => {
       try {
         const response = await axios.get(
           "https://jsonplaceholder.typicode.com/posts/1"
@@ -114,8 +95,27 @@ function DataFetchingUseReducer() {
       } catch (error) {
         dispatch({ type: "FETCH_FAIL", payload: error.message });
       }
-    })();
-  }, []);
+    };
+
+    useEffect(() => {
+      requester();
+    }, []);
+
+  //------------------------
+
+  // // auto invoked function
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         "https://jsonplaceholder.typicode.com/posts/1"
+  //       );
+  //       dispatch({ type: "FETCH_SUCCESS", payload: response.data });
+  //     } catch (error) {
+  //       dispatch({ type: "FETCH_FAIL", payload: error.message });
+  //     }
+  //   })();
+  // }, []);
 
   return (
     <>

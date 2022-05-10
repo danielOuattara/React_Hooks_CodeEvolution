@@ -1,7 +1,8 @@
 // import { useState, useEffect } from "react";
 // import axios from "axios";
 
-// // simple useState & useEffect , axios then().catch()
+// /* simple useState & useEffect , axios then().catch()
+// ------------------------------------------------------*/
 // function DataFetching() {
 //   const [loading, setLoading] = useState(true);
 //   const [error, setError] = useState("");
@@ -10,9 +11,10 @@
 //   useEffect(() => {
 //     axios.get("https://jsonplaceholder.typicode.com/posts/1")
 //       .then((response) => {
-//         setLoading(false);
+//         console.log("response = ", response);
 //         setPost(response.data);
 //         setError("");
+//         setLoading(false);
 //         console.log(response.data);
 //       })
 //       .catch((error) => {
@@ -44,10 +46,12 @@ function DataFetching() {
 
   const resquester = async () => {
     try {
-      const response = await axios.get("https://jsonplaceholder.typicode.com/posts/1");
-      setLoading(false);
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/posts/1"
+      );
       setPost(response.data);
       setError("");
+      setLoading(false);
     } catch (error) {
       setLoading(false);
       const errorMessage = error.message;
